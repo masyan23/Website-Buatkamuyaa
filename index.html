@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat kamuu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- START SCREEN -->
+<div id="startScreen" class="start-screen" onclick="startWeb()">
+    <h1>Klik yaa 😊 </h1>
+</div>
+
+<!-- CONTENT -->
+<div id="content" class="container" style="display:none;">
+
+    <div class="unicorn">
+        <img src="Foto/unicorn6.png" alt="Unicorn">
+    </div>
+
+    <h1>Semangat Terus Yaa!</h1>
+
+    <h2 class="typing">Rahmadania Arrum Pratisa</h2>
+
+    <p class="ayat">
+        "وَهُوَ مَعَكُمْ أَيْنَ مَا كُنْتُمْ"
+
+    <span class="arti">Dan Dia (Allah) bersama kamu di mana saja kamu berada</span>
+
+    <span class="sumber">QS. Al-Hadid: 4</span>
+    </p>
+
+
+</div>
+
+<!-- AUDIO -->
+<audio id="musik" loop preload="auto">
+    <source src="Lagu/PenjagaHati.mp3" type="audio/mpeg">
+</audio>
+
+<!-- JS -->
+<script>
+function startWeb(){
+    const musik = document.getElementById('musik');
+    const startScreen = document.getElementById('startScreen');
+    const content = document.getElementById('content');
+
+    startScreen.style.display = "none";
+    content.style.display = "block";
+
+    musik.load();
+    musik.play().catch(err => console.log(err));
+
+}
+
+function buatLove(){
+    const love = document.createElement("div");
+    love.classList.add("love");
+    love.innerHTML = "💖";
+
+    love.style.left = Math.random() * 100 + "vw";
+    love.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+    document.body.appendChild(love);
+
+    setTimeout(() => love.remove(), 5000);
+}
+</script>
+
+</body>
+</html>
